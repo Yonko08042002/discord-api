@@ -28,6 +28,6 @@ app
     }
     return c.json({ error: "Invalid email or password" }, 401);
   })
-  .post("/sign-up", (c) => c.json({ token: "124" }));
+  .get("/sign-up", (c) => c.json({ token: "124" }));
 
 export default handle(app);
