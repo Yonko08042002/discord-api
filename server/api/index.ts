@@ -24,7 +24,7 @@ app
     const { email, password } = await c.req.json();
     // const body = await c.req.parseBody();
     if (email === "tin.nguyen@gmail.com" && password === "!Enouvo123") {
-      return c.json({ token: "124" });
+      return c.json({ token: "124", id: 1 });
     }
     return c.json({ error: "Invalid email or password" }, 401);
   })
