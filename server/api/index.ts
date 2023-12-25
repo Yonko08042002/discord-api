@@ -2,7 +2,8 @@ import { Hono } from "hono";
 import { handle } from "hono/vercel";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
-
+import { router as auth } from "../modules/auth/auth.controller";
+import { router as orgs } from "../modules/orgs/orgs.controller";
 export const config = {
   runtime: "edge",
 };
@@ -17,17 +18,13 @@ app.use(
     credentials: true,
   })
 );
-app.get("/", (c) => c.json({ message: "Hello Hono!" }));
 
-app
-  .post("/sign-in", async (c) => {
-    const { email, password } = await c.req.json();
-    // const body = await c.req.parseBody();
-    if (email === "tin.nguyen@gmail.com" && password === "!Enouvo123") {
-      return c.json({ token: "124" });
-    }
-    return c.json({ error: "Invalid email or password" }, 401);
-  })
-  .get("/sign-up", (c) => c.json({ token: "124" }));
+app.route("/",auth);
+app.route("/orgs", orgs);
+
+
+
+
+  
 
 export default handle(app);
