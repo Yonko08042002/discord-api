@@ -75,7 +75,7 @@ router.get("/:orgId/channels", (c) =>
     },
   ])
 );
-router.get("/:orgId/channels/channelId/members", (c) =>
+router.get("/:orgId/channels/:channelId/members", (c) =>
   c.json([
     {
       id: 1,
