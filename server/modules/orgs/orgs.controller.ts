@@ -75,6 +75,29 @@ router.get("/:orgId/channels", (c) =>
     },
   ])
 );
+router.get("/:orgId/channels/:channelId/messages", (c) =>
+  c.json([  {
+    id: 1,
+    sender: {
+      id: 2,
+      name: "TinNguyen",
+      avatar: "https://bom.so/Tkos14",
+    },
+    createdAt: "09/11/2023 19:44",
+    message: "Hey,How are you?",
+  },
+    {
+    id: 2,
+    sender: {
+      id: 2,
+      name: "VyHuynh",
+      avatar: "https://bom.so/Tkos14",
+    },
+    createdAt: "09/11/2023 19:44",
+    message: "I fine",
+  }
+  ]
+);
 router.get("/:orgId/channels/:channelId/members", (c) =>
   c.json([
     {
