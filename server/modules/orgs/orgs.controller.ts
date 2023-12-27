@@ -62,7 +62,7 @@ router.get("/:orgId/channels", (c) =>
     {
       id: 4,
       name: "Class 3",
-      groups: [
+      channels: [
         {
           id: "7",
           name: "Group a2",
