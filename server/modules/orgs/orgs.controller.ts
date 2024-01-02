@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 
 export const router = new Hono();
-router.get("/", (c) =>
+router.get("/org", (c) =>
   c.json([
     {
       id: "1",
