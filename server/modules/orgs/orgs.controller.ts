@@ -73,6 +73,16 @@ router.get("/:orgId/channels/:channelId/messages", (c) =>
       createdAt: "09/11/2023 19:44",
       message: "I fine",
     },
+    {
+      id: 3,
+      sender: {
+        id: 3,
+        name: "Tin so 2",
+        avatar: "https://bom.so/Tkos14",
+      },
+      createdAt: "09/11/2023 19:44",
+      message: "Hey hey hey",
+    },
   ])
 );
 router.get("/:orgId/channels/:channelId/members", (c) =>
