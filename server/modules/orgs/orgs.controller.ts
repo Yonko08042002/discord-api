@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 
 export const router = new Hono();
-router.get("/org", (c) =>
+router.get("/", (c) =>
   c.json([
     {
       id: "1",
@@ -18,60 +18,36 @@ router.get("/org", (c) =>
 router.get("/:orgId/channels", (c) =>
   c.json([
     {
-      id: 1,
-      name: "Class",
-      channels: [
-        {
-          id: "1",
-          name: "Group A",
-        },
-        {
-          id: "2",
-          name: "Group B",
-        },
-      ],
+      id: "1",
+      name: "Class 1",
+      category: {
+        id: 1,
+        name: "class",
+      },
     },
     {
-      id: 2,
+      id: "2",
       name: "Class 2",
-      channels: [
-        {
-          id: "3",
-          name: "Group A2",
-        },
-        {
-          id: "4",
-          name: "Group B2",
-        },
-      ],
+      category: {
+        id: 1,
+        name: "class",
+      },
     },
     {
-      id: 3,
+      id: "3",
+      name: "Class 1",
+      category: {
+        id: 2,
+        name: "class Audio",
+      },
+    },
+    {
+      id: "4",
       name: "Class 2",
-      channels: [
-        {
-          id: "5",
-          name: "Group a2",
-        },
-        {
-          id: "6",
-          name: "Group b2",
-        },
-      ],
-    },
-    {
-      id: 4,
-      name: "Class 3",
-      channels: [
-        {
-          id: "7",
-          name: "Group a2",
-        },
-        {
-          id: "8",
-          name: "Group b2",
-        },
-      ],
+      category: {
+        id: 2,
+        name: "class Audio",
+      },
     },
   ])
 );
