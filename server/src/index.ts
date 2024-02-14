@@ -19,7 +19,7 @@ app.use(
 );
 
 app.route("/", authRouter);
-app.route("/orgs", authRouter);
+app.route("/orgs", orgsRouter);
 app.route("/upload", uploadRouter);
 
 serve(app, () => {
